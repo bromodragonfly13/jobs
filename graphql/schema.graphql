@@ -19,7 +19,11 @@ type Query {
     tags: [Tag!]! @all
 
 
-    jobs(orderBy: _ @orderBy(columns: ["created_at", "job_title"])): [Job!]! @all
+    jobs(
+      orderBy: _ @orderBy(columns: ["created_at", "job_title"])
+      hasTags: _ @whereHasConditions(columns: ["slug"])
+
+    ): [Job!]! @all
 }
 
 "Account of a person who utilizes this application."

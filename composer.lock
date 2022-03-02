@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "174121c44ad9b4e411cb10207ba447d9",
+    "content-hash": "d1bf3ada001728b9500e1cc8b4ba8a79",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1761,6 +1761,61 @@
             "time": "2021-11-21T11:48:40+00:00"
         },
         {
+            "name": "mll-lab/graphql-php-scalars",
+            "version": "v4.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mll-lab/graphql-php-scalars.git",
+                "reference": "b1898f9056606618e68e3872c58355e76fdf6788"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mll-lab/graphql-php-scalars/zipball/b1898f9056606618e68e3872c58355e76fdf6788",
+                "reference": "b1898f9056606618e68e3872c58355e76fdf6788",
+                "shasum": ""
+            },
+            "require": {
+                "egulias/email-validator": "^2.1.17",
+                "ext-json": "*",
+                "php": "^7.2 || ^8.0",
+                "spatie/regex": "^1.4.1",
+                "thecodingmachine/safe": "^1.0.3",
+                "webonyx/graphql-php": "^0.13.8 || ^14"
+            },
+            "require-dev": {
+                "ergebnis/composer-normalize": "^2.13",
+                "phpstan/phpstan": "~0.12.31",
+                "phpunit/phpunit": "^8.5",
+                "thecodingmachine/phpstan-safe-rule": "^1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "MLL\\GraphQLScalars\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Benedikt Franke",
+                    "email": "benedikt@franke.tech"
+                }
+            ],
+            "description": "A collection of custom scalar types for usage with https://github.com/webonyx/graphql-php",
+            "keywords": [
+                "graphql",
+                "php"
+            ],
+            "support": {
+                "issues": "https://github.com/mll-lab/graphql-php-scalars/issues",
+                "source": "https://github.com/mll-lab/graphql-php-scalars/tree/v4.1.1"
+            },
+            "time": "2021-05-05T10:21:38+00:00"
+        },
+        {
             "name": "mll-lab/laravel-graphql-playground",
             "version": "v2.6.0",
             "source": {
@@ -3140,6 +3195,69 @@
                 }
             ],
             "time": "2021-09-25T23:10:38+00:00"
+        },
+        {
+            "name": "spatie/regex",
+            "version": "1.4.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/regex.git",
+                "reference": "1500ed75af430df3a32047494c43d79d45cf152b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/regex/zipball/1500ed75af430df3a32047494c43d79d45cf152b",
+                "reference": "1500ed75af430df3a32047494c43d79d45cf152b",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.3|^8.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^9.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\Regex\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian De Deyne",
+                    "email": "sebastian@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A sane interface for php's built in preg_* functions",
+            "homepage": "https://github.com/spatie/regex",
+            "keywords": [
+                "expression",
+                "expressions",
+                "regex",
+                "regular",
+                "spatie"
+            ],
+            "support": {
+                "issues": "https://github.com/spatie/regex/issues",
+                "source": "https://github.com/spatie/regex/tree/1.4.2"
+            },
+            "funding": [
+                {
+                    "url": "https://spatie.be/open-source/support-us",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/spatie",
+                    "type": "github"
+                }
+            ],
+            "time": "2020-11-03T23:05:25+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
