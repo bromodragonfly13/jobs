@@ -12,9 +12,14 @@ type Query {
       name: String @where(operator: "like")
     ): [User!]! @paginate(defaultCount: 10)
 
+
+
     tag(slug: String! @eq): Tag @find
 
     tags: [Tag!]! @all
+
+
+    jobs: [Job!]! @all
 }
 
 "Account of a person who utilizes this application."
@@ -41,8 +46,20 @@ type User {
 type Tag {
   
   id: ID!
-
   title: String!
-
   slug: String!
+}
+
+type Job {
+  
+  id: ID!
+  job_title: String!
+  job_location: String!
+  job_link: String!
+  company_name: String!
+  company_logo: String!
+  created_at: DateTime!
+  updated_at: DateTime!
+  tags: [Tag!]! @belongsToMany
+  user: User! @belongsTo
 }
