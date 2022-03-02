@@ -19,7 +19,7 @@ type Query {
     tags: [Tag!]! @all
 
 
-    jobs: [Job!]! @all
+    jobs(orderBy: _ @orderBy(columns: ["created_at", "job_title"])): [Job!]! @all
 }
 
 "Account of a person who utilizes this application."
