@@ -62,6 +62,7 @@ type Job {
   job_link: String!
   company_name: String!
   company_logo: String!
+  highlighted: Boolean!
   created_at: DateTime!
   updated_at: DateTime!
   tags: [Tag!]! @belongsToMany
