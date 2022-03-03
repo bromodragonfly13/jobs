@@ -48,7 +48,7 @@ type User {
     "When the account was last updated."
     updated_at: DateTime!
     jobs(
-      orderBy: _ @orderBy(columns: ["created_at"])
+      orderBy: _ @orderBy(columns: ["pinned", "created_at"])
       ): [Tag!]! @hasMany
 }
 
