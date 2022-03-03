@@ -20,7 +20,7 @@ type Query {
 
 
     jobs(
-      orderBy: _ @orderBy(columns: ["created_at", "job_title"])
+      orderBy: _ @orderBy(columns: ["pinned","created_at", "job_title"])
       hasTags: _ @whereHasConditions(columns: ["slug"])
 
     ): [Job!]! @all
@@ -63,6 +63,7 @@ type Job {
   company_name: String!
   company_logo: String!
   highlighted: Boolean!
+  pinned: Boolean!
   created_at: DateTime!
   updated_at: DateTime!
   tags: [Tag!]! @belongsToMany
