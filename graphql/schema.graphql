@@ -24,6 +24,8 @@ type Query {
       hasTags: _ @whereHasConditions(columns: ["slug"])
 
     ): [Job!]! @all
+
+    me: User @auth
 }
 
 "Account of a person who utilizes this application."
