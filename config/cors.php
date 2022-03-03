@@ -17,10 +17,10 @@ return [
 
     'paths' => [
         'api/*',
+        'sanctum/csrf-cookie',
         'graphql',
         'login',
         'logout',
-        'sanctum/csrf-cookie'
     ],
 
     'allowed_methods' => ['*'],
