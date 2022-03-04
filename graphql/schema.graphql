@@ -74,3 +74,28 @@ type Job {
   tags: [Tag!]! @belongsToMany
   user: User! @belongsTo
 }
+
+input CreateUserInput{
+  name: String @rules(apply: ["required"])
+  email: String @rules(apply: ["required", "email"])
+  password: String @rules(apply: ["required", "min:6"]) @hash
+}
+
+input CreateUserBelongsTo {
+  create: CreateUserInput
+}
+
+input CreateJobInput {
+  job_title: String @rules(apply: ["required"])
+  job_location: String @rules(apply: ["required"])
+  job_link: String @rules(apply: ["required", "url"])
+  company_name: String @rules(apply: ["required"])
+  company_logo: String @rules(apply: ["required", "url"])
+  highlighted: Boolean @rules(apply: ["boolean"])
+  pinned: Boolean @rules(apply: ["boolean"])
+  user: CreateUserBelongsTo
+}
+
+type Mutation {
+  createJobAndRegisterUser(input: CreateJobInput! @spread): Job! @create
+}
