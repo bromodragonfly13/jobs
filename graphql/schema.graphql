@@ -85,6 +85,10 @@ input CreateUserBelongsTo {
   create: CreateUserInput
 }
 
+input CreateTagsBelongsToMany {
+  connect: [ID!] @rulesForArray(apply: ["required"])
+}
+
 input CreateJobInput {
   job_title: String @rules(apply: ["required"])
   job_location: String @rules(apply: ["required"])
@@ -94,6 +98,7 @@ input CreateJobInput {
   highlighted: Boolean @rules(apply: ["boolean"])
   pinned: Boolean @rules(apply: ["boolean"])
   user: CreateUserBelongsTo
+  tags: CreateTagsBelongsToMany
 }
 
 type Mutation {
