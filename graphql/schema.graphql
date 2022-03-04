@@ -90,15 +90,15 @@ input CreateTagsBelongsToMany {
 }
 
 input CreateJobInput {
-  job_title: String @rules(apply: ["required"])
-  job_location: String @rules(apply: ["required"])
-  job_link: String @rules(apply: ["required", "url"])
-  company_name: String @rules(apply: ["required"])
-  company_logo: String @rules(apply: ["required", "url"])
-  highlighted: Boolean @rules(apply: ["boolean"])
-  pinned: Boolean @rules(apply: ["boolean"])
-  user: CreateUserBelongsTo
-  tags: CreateTagsBelongsToMany
+    job_title: String @rules(apply: ["required"])
+    job_location: String @rules(apply: ["required"])
+    job_link: String @rules(apply: ["required", "url"])
+    company_name: String @rules(apply: ["required"])
+    company_logo: String @rules(apply: ["required", "url"])
+    highlighted: Boolean @rules(apply: ["boolean"])
+    pinned: Boolean @rules(apply: ["boolean"])
+    user: CreateUserBelongsTo
+    tags: CreateTagsBelongsToMany!
 }
 
 type Mutation {
