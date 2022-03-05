@@ -19,6 +19,7 @@ class Job extends Model
         'company_logo',
         'highlighted',
         'pinned',
+        'user_id'
     ];
 
     public function tags() :BelongsToMany

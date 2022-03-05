@@ -103,4 +103,8 @@ input CreateJobInput {
 
 type Mutation {
   createJobAndRegisterUser(input: CreateJobInput! @spread): Job! @create
+  createJob(input: CreateJobInput! @spread): Job!
+    @guard
+    @create
+    @inject(context: "user.id", name: "user_id")
 }
