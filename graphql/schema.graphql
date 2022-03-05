@@ -90,6 +90,10 @@ input CreateTagsBelongsToMany {
   connect: [ID!] @rulesForArray(apply: ["required"])
 }
 
+input UpdateTagsBelongsToMany {
+  sync: [ID!] @rulesForArray(apply: ["required"])
+}
+
 input CreateJobInput {
     job_title: String @rules(apply: ["required"])
     job_location: String @rules(apply: ["required"])
@@ -101,6 +105,17 @@ input CreateJobInput {
     user: CreateUserBelongsTo
     tags: CreateTagsBelongsToMany!
 }
+input UpdateJobInput {
+    job_title: String @rules(apply: ["required"])
+    job_location: String @rules(apply: ["required"])
+    job_link: String @rules(apply: ["required", "url"])
+    company_name: String @rules(apply: ["required"])
+    company_logo: String @rules(apply: ["required", "url"])
+    highlighted: Boolean @rules(apply: ["boolean"])
+    pinned: Boolean @rules(apply: ["boolean"])
+    tags: UpdateTagsBelongsToMany!
+
+}
 
 type Mutation {
   createJobAndRegisterUser(input: CreateJobInput! @spread): Job! @create
@@ -108,4 +123,5 @@ type Mutation {
     @guard
     @create
     @inject(context: "user.id", name: "user_id")
+  updateJob(id: ID!, input: UpdateJobInput! @spread): Job! @update
 }
