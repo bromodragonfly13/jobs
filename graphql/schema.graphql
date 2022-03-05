@@ -123,5 +123,6 @@ type Mutation {
     @guard
     @create
     @inject(context: "user.id", name: "user_id")
-  updateJob(id: ID!, input: UpdateJobInput! @spread): Job! @update
+  updateJob(id: ID!, input: UpdateJobInput! @spread): Job! @update @can(ability: "update",
+  find: "id")
 }
